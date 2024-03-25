@@ -6,7 +6,12 @@ def add(a, b):
         a: first integer
         b: second integer
 
-    Returns:
-        The return value. a + b
-    """
+        Returns:
+            The return value. a + b
+        """
     return a + b
+
+
+zoomy = 1
+abacus = 2
+rendered = 3
