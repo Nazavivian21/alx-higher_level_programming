@@ -7,6 +7,6 @@ def multiple_returns(sentence):
         return tup
     else:
         length = len(sentence)
-        first_char = sentence[:]
+        first_char = sentence[0]
         tup = length, first_char
         return tup
