@@ -1,0 +1,1 @@
+This a directory for Everything is an Object, a project for brain storming.
