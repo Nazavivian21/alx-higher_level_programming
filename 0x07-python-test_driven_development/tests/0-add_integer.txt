@@ -1,0 +1,8 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test that a and b are correct types
+==============================================
+>>> add_integer(3.0):
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
