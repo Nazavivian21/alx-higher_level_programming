@@ -4,3 +4,12 @@ Checking that a new list is empty
 >>> M = MyList()
 >>> print(M)
 []
+
+>>> M.append(3)
+>>> M.append(2)
+>>> M.append(1)
+>>> print(M)
+[3, 2, 1]
+>>> M.print_sorted()
+[1, 2, 3]
+
