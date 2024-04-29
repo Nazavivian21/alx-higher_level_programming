@@ -17,3 +17,8 @@ Checking that a new list is empty
 >>> Y = MyList()
 >>> Y.print_sorted()
 []
+
+>>> L = Y.print_sorted()
+[]
+>>> print(L)
+None
