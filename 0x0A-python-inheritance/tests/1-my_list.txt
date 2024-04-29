@@ -15,5 +15,5 @@ Checking that a new list is empty
 [-1, 1, 2, 3]
 
 >>> Y = MyList()
->>> Y.print_sorted
-<bound method MyList.print_sorted of []>
+>>> Y.print_sorted()
+[]
