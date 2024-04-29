@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Returns True if the object is an instance of the specified class, otherwise 
+Returns True if the object is an instance of the specified class, otherwise
 False.
 """
 
