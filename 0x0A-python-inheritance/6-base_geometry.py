@@ -2,9 +2,12 @@
 """
 Contains a class
 """
-class BaseGeometry: 
+
+
+class BaseGeometry:
     """
     Definition of a Base Geometry
     """
+
     def area(self):
         raise Exception('area() is not implemented')
