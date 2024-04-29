@@ -1,0 +1,6 @@
+>>> MyList = __import__('1-my_list').MyList
+
+Checking that a new list is empty
+>>> M = MyList()
+>>> print(M)
+[]
