@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""
+Contains an empty class
+"""
+
+
 class BaseGeometry:
     """
-    Definition of a Base Geometry
+    An empty class
     """
 
     pass
