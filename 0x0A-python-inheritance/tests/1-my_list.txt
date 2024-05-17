@@ -25,5 +25,5 @@ Checking that a new list is empty
 [6, 5, 4]
 >>> L = Y.print_sorted()
 [4, 5, 6]
->>> Y == L
-False
+>>> assert Y == L
+AssertionError
