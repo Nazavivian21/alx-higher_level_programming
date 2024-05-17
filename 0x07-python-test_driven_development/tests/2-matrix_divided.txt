@@ -38,12 +38,21 @@ Traceback (most recent call last):
 ...      
 ZeroDivisionError: division by zero
 
+Test for zero arguments
+=======================================
 >>> matrix_divided()
 Traceback (most recent call last):
 ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
+Test for one arguments
+======================================
 >>> matrix_divided(2)
 Traceback (most recent call last):
 ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test for a case where the divisor is float('inf')
+==================================================
+>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
