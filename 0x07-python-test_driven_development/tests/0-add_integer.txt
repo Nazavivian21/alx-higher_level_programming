@@ -9,16 +9,35 @@ SyntaxError: invalid syntax
 
 Test for integer casting
 ==========================================
->>> a = 1.5
->>> b = 2.03
->>> int(a)
-1
->>> int(b)
-2
+>>> add_integer(1.5, 2.5)
+3
 
 Check for the type of a and b
 =========================================
->>> type(a)
-<class 'float'>
->>> type(b)
-<class 'float'>
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...     
+TypeError: b must be an integer
+
+Check for float overflow
+========================================
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+...   
+OverflowError: cannot convert float infinity to integer
+
+Test for conversion of float NaN to integer
+==============================================
+>>> add_integer(float('NaN'), 1) 
+Traceback (most recent call last):
+...     
+ValueError: cannot convert float NaN to integer
+
+Test for arguments
+===============================================
+>>> add_integer(1)
+99
+>>> add_integer()
+Traceback (most recent call last):
+...      
+TypeError: add_integer() missing 1 required positional argument: 'a'
