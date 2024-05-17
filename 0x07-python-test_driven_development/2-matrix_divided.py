@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
+"""This module divides the integers or floats in matrix"""
 
 def matrix_divided(matrix, div):
+    """This function returns the quotient of all elements in a matrix. """
     if not isinstance(matrix, list):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
