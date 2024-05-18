@@ -4,18 +4,14 @@ Test for regular case
 >>> text_indentation("Hello. How are you? I am fine.")
 Hello.
 <BLANKLINE>
-<BLANKLINE>
 How are you?
 <BLANKLINE>
-<BLANKLINE>
 I am fine.
-<BLANKLINE>
 <BLANKLINE>
 
 Test for regular case
 >>> text_indentation("Holberton.School")
 Holberton.
-<BLANKLINE>
 <BLANKLINE>
 School
 
@@ -27,12 +23,9 @@ Test for regular case
 >>> text_indentation("Hello. How are you? I am fine.")
 Hello.
 <BLANKLINE>
-<BLANKLINE>
 How are you?
 <BLANKLINE>
-<BLANKLINE>
 I am fine.
-<BLANKLINE>
 <BLANKLINE>
 
 Test for TypeError
