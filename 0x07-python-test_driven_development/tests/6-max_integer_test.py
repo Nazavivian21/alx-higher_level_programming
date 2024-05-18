@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+import sys
+import os
+
+# Add the src directory to the Python search path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
 """Unittest for max_integer([..])
 """
 import unittest
