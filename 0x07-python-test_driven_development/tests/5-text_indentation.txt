@@ -44,6 +44,7 @@ TypeError: text must be a string
 Test for empty strings
 >>> text_indentation("")
 
+
 Test for missing argument
 >>> text_indentation()
 Traceback (most recent call last):
