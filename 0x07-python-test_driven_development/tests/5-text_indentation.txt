@@ -1,35 +1,50 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+Test for regular case
 >>> text_indentation("Hello. How are you? I am fine.")
 Hello.
 <BLANKLINE>
+<BLANKLINE>
 How are you?
 <BLANKLINE>
+<BLANKLINE>
 I am fine.
+<BLANKLINE>
+<BLANKLINE>
 
+Test for regular case
 >>> text_indentation("Holberton.School")
 Holberton.
 <BLANKLINE>
+<BLANKLINE>
 School
 
+Test for absence of special characters
 >>> text_indentation("Holberton School")
 Holberton School
 
+Test for regular case
 >>> text_indentation("Hello. How are you? I am fine.")
 Hello.
 <BLANKLINE>
+<BLANKLINE>
 How are you?
 <BLANKLINE>
+<BLANKLINE>
 I am fine.
+<BLANKLINE>
+<BLANKLINE>
 
+Test for TypeError
 >>> text_indentation(12)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
 
+Test for empty strings
 >>> text_indentation("")
-<BLANKLINE>
 
+Test for missing argument
 >>> text_indentation()
 Traceback (most recent call last):
 ...
