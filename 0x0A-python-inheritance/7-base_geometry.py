@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+Contains a class Base Geometry
+"""
 class BaseGeometry:
+    """
+    Serves as the base for geometrical shapes.
+    """
     def area(self):
         raise Exception('area() is not implemented')
 
