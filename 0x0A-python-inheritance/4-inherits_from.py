@@ -10,8 +10,9 @@ def inherits_from(obj, a_class):
     Args:
     obj: The object to check.
     a_class: The class to check against.
-    
+
     Returns:
-    True if the object is an instance of a subclass of a_class, otherwise False.
+    True if the object is an instance of a subclass \
+          of a_class, otherwise False.
     """
     return issubclass(type(obj), a_class) and type(obj) != a_class
