@@ -1,2 +1,3 @@
 -- List all tables in a database
-SHOW TABLES
+USE hbtn_0c_0;
+SHOW TABLES;
