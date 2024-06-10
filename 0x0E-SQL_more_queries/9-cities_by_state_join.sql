@@ -9,3 +9,4 @@ FROM
     cities
 ORDER BY 
     cities.id ASC;
+
