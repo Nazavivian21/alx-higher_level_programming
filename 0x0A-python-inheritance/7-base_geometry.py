@@ -2,10 +2,13 @@
 """
 Contains a class Base Geometry
 """
+
+
 class BaseGeometry:
     """
     Serves as the base for geometrical shapes.
     """
+
     def area(self):
         raise Exception('area() is not implemented')
 
@@ -14,4 +17,3 @@ class BaseGeometry:
             raise TypeError(f'{name} must be an integer')
         if value <= 0:
             raise ValueError(f'{name} must be greater than 0')
- 
