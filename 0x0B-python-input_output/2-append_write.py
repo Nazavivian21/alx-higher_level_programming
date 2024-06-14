@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""The read_file method module"""
+"""The append_write method module"""
 
 
 def append_write(filename="", text=""):
-    """Reads a textfile and prints to stdout:"""
+    """Appends to a textfile"""
     with open(filename, 'a', encoding="utf-8") as f:
         return f.write(text)
