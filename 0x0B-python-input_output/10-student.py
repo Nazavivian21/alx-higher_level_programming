@@ -20,13 +20,13 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-
     def to_json(self, attrs=None):
         """
         Retrieves a dictionary representation of the Student instance.
 
         Args:
-            attrs (list): Optional list of attribute names to include in the dictionary.
+            attrs (list): Optional list of attribute names to \
+                include in the dictionary.
 
         Returns:
             dict: A dictionary representation of the Student instance.
