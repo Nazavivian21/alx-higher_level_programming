@@ -1,5 +1,7 @@
-#!/usr/bin/pythn3
+#!/usr/bin/python3
 """The class_to_json method mosdule"""
+
+
 def class_to_json(obj):
     """
     Returns the dictionary description with simple data structure
