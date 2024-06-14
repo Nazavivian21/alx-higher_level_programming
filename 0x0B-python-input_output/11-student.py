@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""The student class method"""
+
+
 class Student:
     """
     A class that defines a student by:
