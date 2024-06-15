@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """The Rectangle class module"""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -73,6 +73,4 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return a string representation of the rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.)
