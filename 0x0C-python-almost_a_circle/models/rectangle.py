@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """The Rectangle class module"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -68,8 +68,10 @@ class Rectangle(Base):
 
     def display(self):
         """Print the rectangle using the '#' character."""
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Return a string representation of the rectangle."""
