@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """The Rectangle class module"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -19,7 +19,6 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.__validate_integer("width", value)
         self.__width = value
 
     @property
@@ -28,7 +27,6 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.__validate_integer("height", value)
         self.__height = value
 
     @property
@@ -37,7 +35,6 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.__validate_integer("x", value)
         self.__x = value
 
     @property
@@ -46,5 +43,4 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.__validate_integer("y", value)
         self.__y = value
