@@ -25,7 +25,8 @@ class Square(Rectangle):
         )
 
     def update(self, *args, **kwargs):
-        """Update the attributes of the Square instance using positional and/or keyword arguments."""
+        """Update the attributes of the Square instance using positional \
+            and/or keyword arguments."""
         if args:
             attributes = ["id", "size", "x", "y"]
             for index, value in enumerate(args):
