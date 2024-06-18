@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """The Base class module"""
 import json
+import csv
 import os
 
 
@@ -74,3 +75,54 @@ class Base:
 
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
+
+    classmethod
+
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serialize and save a list of objects to a CSV file.
+        """
+        filename = f"{cls.__name__}.csv"
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            if cls.__name__ == "Rectangle":
+                writer.writerow(["id", "width", "height", "x", "y"])
+                for obj in list_objs:
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    )
+            elif cls.__name__ == "Square":
+                writer.writerow(["id", "size", "x", "y"])
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserialize and return a list of objects from a CSV file.
+        """
+        filename = f"{cls.__name__}.csv"
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, 'r', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            list_of_dicts = []
+            for row in reader:
+                if cls.__name__ == "Rectangle":
+                    dict_row = {
+                        "id": int(row["id"]),
+                        "width": int(row["width"]),
+                        "height": int(row["height"]),
+                        "x": int(row["x"]),
+                        "y": int(row["y"]),
+                    }
+                elif cls.__name__ == "Square":
+                    dict_row = {
+                        "id": int(row["id"]),
+                        "size": int(row["size"]),
+                        "x": int(row["x"]),
+                        "y": int(row["y"]),
+                    }
+                list_of_dicts.append(dict_row)
+            return [cls.create(**d) for d in list_of_dicts]
