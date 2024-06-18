@@ -76,8 +76,7 @@ class Base:
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
 
-    classmethod
-
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """
         Serialize and save a list of objects to a CSV file.
