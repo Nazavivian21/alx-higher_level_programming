@@ -1,0 +1,1 @@
+This directory covers Objects, Scopes and Closures in JavaScript.
