@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists all states with a name starting with 'N' \
-    from the database hbtn_0e_0_usa.
+This script takes in an argument and displays all values in the states table \
+    of hbtn_0e_0_usa where name matches the argume
 """
 
 import MySQLdb
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     db = MySQLdb.connect(
-       host="localhost",
+        host="localhost",
         port=3306,
         user='root',
         passwd='',
@@ -23,7 +23,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+        state_name
+    )
     cur.execute(query)
 
     states = cur.fetchall()
