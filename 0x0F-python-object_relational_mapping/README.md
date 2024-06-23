@@ -1,0 +1,1 @@
+This directory links Databases and Python Objects together, the first part, uses the module MySQLdb to connect to a MySQL database and execute your SQL queries.  the second part, uses the module SQLAlchemy which is an Object Relational Mapper (ORM).
