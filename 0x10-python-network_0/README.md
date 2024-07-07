@@ -1,0 +1,1 @@
+This directory is for practicing the concept of networking with the  use of curl and python.
