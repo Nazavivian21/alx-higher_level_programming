@@ -17,7 +17,7 @@ if __name__ == "__main__":
     try:
         # Attempt to parse the response as JSON
         user_info = response.json()
-        
+
         # Display the user's GitHub ID
         print(user_info.get('id'))
     except ValueError:
