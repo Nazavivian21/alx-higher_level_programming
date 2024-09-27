@@ -2,33 +2,30 @@
 
 const request = require('request');
 
-// Get the Movie ID from the command line argument
+// Get the Movie ID from the command line arguments
 const movieId = process.argv[2];
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-// Define the API URL with the movie ID
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
-
-// Make a GET request to the API to fetch the movie details
+// Make a request to the Star Wars API to get movie details
 request(apiUrl, (error, response, body) => {
-    if (error) {
-        console.error('Error:', error);
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  // Parse the response body to JSON
+  const data = JSON.parse(body);
+  const characters = data.characters;
+
+  // For each character URL, make a request to get the character name
+  characters.forEach((characterUrl) => {
+    request(characterUrl, (charError, charResponse, charBody) => {
+      if (charError) {
+        console.error(charError);
         return;
-    }
-
-    // Parse the response body as JSON
-    const movie = JSON.parse(body);
-    
-    // Loop through each character URL and make a request to fetch character details
-    movie.characters.forEach((characterUrl) => {
-        request(characterUrl, (charError, charResponse, charBody) => {
-            if (charError) {
-                console.error('Error:', charError);
-                return;
-            }
-
-            // Parse the character data and print the character name
-            const character = JSON.parse(charBody);
-            console.log(character.name);
-        });
+      }
+      const characterData = JSON.parse(charBody);
+      console.log(characterData.name);
     });
+  });
 });
