@@ -1,30 +1,32 @@
 #!/usr/bin/node
+
 const request = require('request');
 
-const apiUrl = process.argv[2]; // Get the API URL from the first argument
+// API URL from the command line argument
+const apiUrl = process.argv[2] || 'https://jsonplaceholder.typicode.com/todos';
 
-// Make a GET request to the provided API URL
+// Make a request to the API
 request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error('Error:', error); // Print error if one occurred
-  } else {
-    const todos = JSON.parse(body); // Parse the response as JSON
-    const completedTasks = {}; // Object to store completed task count for each user
-
-    // Loop through each task and count completed ones by user
-    todos.forEach(todo => {
-      if (todo.completed) { // Only consider completed tasks
-        if (completedTasks[todo.userId]) {
-          completedTasks[todo.userId]++; // Increment the count for the user
-        } else {
-          completedTasks[todo.userId] = 1; // Initialize count for new user
-        }
-      }
-    });
-
-    // Print the user IDs and their corresponding task counts
-    for (const userId in completedTasks) {
-      console.log(`User ${userId}: ${completedTasks[userId]}`);
-    }
+    console.error(error);
+    return;
   }
+
+  // Parse the JSON response
+  const todos = JSON.parse(body);
+  const completedTasks = {};
+
+  // Count completed tasks for each user
+  todos.forEach(todo => {
+    if (todo.completed) {
+      const userId = todo.userId;
+      if (!completedTasks[userId]) {
+        completedTasks[userId] = 0;
+      }
+      completedTasks[userId]++;
+    }
+  });
+
+  // Print the result
+  console.log(completedTasks);
 });
