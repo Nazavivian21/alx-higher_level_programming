@@ -22,7 +22,7 @@ request(apiUrl, (error, response, body) => {
 });
 
 // Function to print each character in order
-function printCharactersInOrder(characters, index) {
+function printCharactersInOrder (characters, index) {
   if (index >= characters.length) {
     return; // Stop when all characters are printed
   }
