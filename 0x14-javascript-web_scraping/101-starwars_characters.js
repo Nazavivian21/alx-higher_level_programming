@@ -1,29 +1,43 @@
 #!/usr/bin/node
+
 const request = require('request');
 
-// Get the movie ID from the command line argument
+// Get the Movie ID from the command line arguments
 const movieId = process.argv[2];
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-// Make a request to the Star Wars API to get the movie details
+// Make a request to the Star Wars API to get movie details
 request(apiUrl, (error, response, body) => {
-    if (error) {
-        console.error('Error:', error);
-        return;
-    }
-    
-    const movie = JSON.parse(body);  // Parse the response to JSON
-    const characters = movie.characters;  // Get the list of character URLs
-    
-    // Loop through each character URL and make a request to get the character's name
-    characters.forEach((characterUrl) => {
-        request(characterUrl, (charError, charResponse, charBody) => {
-            if (charError) {
-                console.error('Error:', charError);
-                return;
-            }
-            const character = JSON.parse(charBody);
-            console.log(character.name);  // Print each character's name
-        });
-    });
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  // Parse the response body to JSON
+  const data = JSON.parse(body);
+  const characters = data.characters;
+
+  // Use a loop to request each character and maintain the order
+  printCharactersInOrder(characters, 0);
 });
+
+// Function to print each character in order
+function printCharactersInOrder(characters, index) {
+  if (index >= characters.length) {
+    return; // Stop when all characters are printed
+  }
+
+  request(characters[index], (error, response, body) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    // Parse character data and print the name
+    const characterData = JSON.parse(body);
+    console.log(characterData.name);
+
+    // Recursive call to get the next character in the list
+    printCharactersInOrder(characters, index + 1);
+  });
+}
